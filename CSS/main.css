@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,400;1,500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --FT_COLOR: hsl(223, 47%, 23%);
+    --FTS_COLOR: hsl(224, 23%, 55%);
+    --BLOCK_COLOR: hsl(225, 100%, 94%);
+    --BACK_COLOR: #fff;
+    --LINK_COLOR: hsl(245, 75%, 52%);
+    --BUTTON_COLOR: hsl(245, 75%, 52%);
+    --FF: 16px;
+    --FW: 300;
+    --FFW: 500;
+    --FFFW: 700;
+}
+
+.container{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: var(--FF);
+    justify-content: center;
+    align-items: center;
+    background-image: url("../pattern-background-desktop.svg");
+}
+.Image img{
+    
+    width: 28vw;
+    height: 25vh;
+    border-top-left-radius: 8%;
+    border-top-right-radius: 8%;
+}
+.summary{
+    display: grid;
+    width: 28vw;
+    height: 70vh;
+    border-radius: 8%;
+    grid-template-rows: 0.5fr, 1.5fr;
+    background-color: var(--BACK_COLOR);
+    
+}
+ p{
+    color: var(--FTS_COLOR);
+}
+.summary :is(h1,h2){
+    color: var(--FT_COLOR);
+}
+.description{
+    text-align: center;
+}
+.block{
+    display: flex;
+    background-color: var(--BLOCK_COLOR);
+    margin: 2rem;
+
+}
+.block img{
+    display:flex;
+    justify-content: flex-start;
+}
+.block a{
+    display: block;
+    margin-left: 1.5rem;
+    margin-top: 0.8rem;
+}
+.block  :is(.start){
+    display: block;
+    text-align: left;
+}
+
+
+.block :is(a:hover, a:focus,a){
+    text-decoration: underline;
+    color: var(--LINK_COLOR);
+}
+
+.button :is(a,p){
+
+    font-weight: var(--FFFW);
+    display: block;
+    width: 26vw;
+    max-height: 35vh;
+    border-radius: 7%;
+    background-color: var(--BLOCK_COLOR);
+    margin:0 auto;
+}
+
+.button :is(a:hover, a:focus){
+    background-color: var(--BUTTON_COLOR);
+    color: var(--BACK_COLOR);
+    transition-property: z-index;
+    
+}
+
+@media all and (max-width: 375){
+    .container{
+        background-image: url("../pattern-background-mobile.svg");
+    }
+}
